@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript</title>
+  </head>
+  <body>
+    <h1>Javascript</h1>
+    <script>
+      function arrToObj(arr) {
+        var result = {};
+        result = arr.reduce(function (accu, item) {
+          accu[item[0]] = item[1];
+          return accu;
+        }, {});
+        return result;
+      }
+
+      // Expected results:
+      var arr = [
+        ["name", "Sơn Đặng"],
+        ["age", 18],
+      ];
+      console.log(arrToObj(arr));
+      // { name: 'Sơn Đặng', age: 18 }
+    </script>
+  </body>
+</html>
