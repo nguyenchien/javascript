@@ -1,6 +1,7 @@
 * {
   padding: 0;
   margin: 0;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 html {
@@ -11,7 +12,11 @@ html {
 .main {
   background: #f1f1f1;
   min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 .form {
@@ -22,7 +27,9 @@ html {
   background: #fff;
   border-radius: 2px;
   margin: 24px;
+  -ms-flex-item-align: center;
   align-self: center;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(51, 62, 73, 0.1);
   box-shadow: 0 2px 5px 0 rgba(51, 62, 73, 0.1);
 }
 .form .heading {
@@ -39,8 +46,13 @@ html {
 }
 
 .form-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-bottom: 16px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
 }
 
