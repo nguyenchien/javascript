@@ -13,6 +13,7 @@ var Validator = function (formElement) {
 
   if (formElement) {
     var inputElements = formElement.querySelectorAll("input[name][rules]");
+    var errorMessage = "";
 
     Array.from(inputElements).forEach(function (inputElement) {
       formRule[inputElement.name] = inputElement.getAttribute("rules");
@@ -20,7 +21,8 @@ var Validator = function (formElement) {
 
     Object.keys(formRule).forEach(function (inputElement) {
       formElement.querySelector("#" + inputElement).onblur = function (e) {
-        console.log(validate(e.target.value));
+        errorMessage = validate(e.target.value);
+        console.log(errorMessage);
       };
     });
   }

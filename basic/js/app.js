@@ -89,11 +89,11 @@ var Validator = function (options) {
   }
 };
 
-Validator.isRequired = function (selector) {
+Validator.isRequired = function (selector, message) {
   return {
     selector,
     check: function (value) {
-      return value.trim() ? undefined : "Vui lòng nhập trường này";
+      return value.trim() ? undefined : message || "Vui lòng nhập trường này";
     },
   };
 };
